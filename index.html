@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+    <header>
+                                        <!-- nav bar -->
+        <nav class="fixed overflow-hidden w-full">
+            <section class="flex justify-between bg-[#C6BDBD] p-3 pl-8 pr-8">
+                <div class="flex">
+                    <h1 class="font-semibold text-[20px]">English</h1>
+                <img src="assets/logo.png" alt="">
+                <h1 class="font-semibold text-[20px]">জানালা</h1>
+                </div>
+                <div class="">
+                    <button id="scroll-btn" class="btn btn-accent btn-outline text-[#422AD5] border-[#422AD5] hover:bg-[#422AD5] hover:text-[white]"><i class="fa-solid fa-circle-question" style="color: #422ad5;"></i> <a href="#scrool" class="nab-linksmootscrool" ></a>FAQ</button>
+    
+                    <button id="scroll-learn" class="btn btn-accent btn-outline text-[#422AD5] border-[#422AD5] hover:bg-[#422AD5] hover:text-[white]"><i class="fa-solid fa-book-open" style="color: #422ad5;"></i>Learn</button>
+    
+                    <button class="btn btn-accent btn-outline text-[#422AD5] border-[#422AD5] hover:bg-[#422AD5] hover:text-[white]"><i class="fa-solid fa-right-from-bracket" style="color: #422ad5;"></i>Logout</button>
+                </div>
+            </section>
+        </nav>
+                                    <!-- hero banner -->
+        <section class="flex items-center justify-between">
+            <div class="pl-10">
+                <h1 class="text-[24px] font-extrabold"><span class="text-sky-500 text-[24px] font-extrabold">English</span> is Easy!!</h1>
+                <br>
+                <p>আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন হন অথবা <br> আপনার দক্ষতা বাড়াতে চান, আমাদের Interactive Lessons আপনাকে নিয়ে <br> যাবে অন্য একটি Level এ</p>
+                <input type="text" placeholder="Enter Your name" class="mt-6 w-[300px]"></input>
+                <br>
+                <input type="pin" placeholder="pin" class="mt-4 w-[300px]"></input>
+                <br>
+                <button class="btn btn-soft text-[#422AD5] hover:bg-[#422AD5] hover:text-[white] border-[#422AD5] mt-4">get started</button>
+            </div>
+            <div>
+                <img src="assets/hero-student.png" alt="">
+            </div>
+        </section>
+    </header>
+                                        <!-- 7 button action -->
+       <main id="target-learn" class="text-center mt-[110px]">
+        <h1 class="text-[24px] font-extrabold"><span class="text-sky-500">Let's</span> Learn Vocabularies</h1>
+
+        <button class="btn btn-soft text-[#422AD5] hover:bg-[#422AD5] hover:text-[white] border-[#422AD5] mt-4 "><i class="fa-solid fa-book-open" style="color: #422ad5; "></i> Lesson-1</button>
+        <button class="btn btn-soft text-[#422AD5] hover:bg-[#422AD5] hover:text-[white] border-[#422AD5] mt-4"><i class="fa-solid fa-book-open" style="color: #422ad5;"></i> Lesson-2</button>
+        <button class="btn btn-soft text-[#422AD5] hover:bg-[#422AD5] hover:text-[white] border-[#422AD5] mt-4"><i class="fa-solid fa-book-open" style="color: #422ad5;"></i> Lesson-3</button>
+        <button class="btn btn-soft text-[#422AD5] hover:bg-[#422AD5] hover:text-[white] border-[#422AD5] mt-4"><i class="fa-solid fa-book-open" style="color: #422ad5;"></i> Lesson-4</button>
+        <button class="btn btn-soft text-[#422AD5] hover:bg-[#422AD5] hover:text-[white] border-[#422AD5] mt-4"><i class="fa-solid fa-book-open" style="color: #422ad5;"></i> Lesson-5</button>
+        <button class="btn btn-soft text-[#422AD5] hover:bg-[#422AD5] hover:text-[white] border-[#422AD5] mt-4"><i class="fa-solid fa-book-open" style="color: #422ad5;"></i> Lesson-6</button>
+        <button class="btn btn-soft text-[#422AD5] hover:bg-[#422AD5] hover:text-[white] border-[#422AD5] mt-4"><i class="fa-solid fa-book-open" style="color: #422ad5;"></i> Lesson-7</button>
+       </main>
+                                    <!-- 7 button close -->
+                                     <!-- 7button output -->
+            
+    <section class="items-center text-center bg-[#f8f8f8] mx-12 rounded-xl mt-7">
+        <div class="p-8">
+        <p>আপনি এখনো কোন Lesson Select করেন ন</p>
+        <h1 class="text-[24px]">একটি Lesson Select করুন।</h1>
+        </div>
+    </section>
+                                    <!-- 7button output close -->
+                                    <!-- Question ask section -->
+                
+    <section class="px-12 mt-[200px]" id="target-section">
+       
+        <h1 class="text-[24px] font-extrabold text-center"><span class="text-sky-400">Frequently </span> Asked Questions  </h1>
+
+            <div class="collapse collapse-plus bg-base-100 border border-base-300 mt-3">
+                <input type="radio" name="my-accordion-3" checked="checked" />
+                <div class="collapse-title font-semibold">How do I create an account?</div>
+                <div class="collapse-content text-sm">Click the "Sign Up" button in the top right corner and follow the registration process.</div>
+              </div>
+              <div class="collapse collapse-plus bg-base-100 border border-base-300 mt-4">
+                <input type="radio" name="my-accordion-3" />
+                <div class="collapse-title font-semibold">I forgot my password. What should I do?</div>
+                <div class="collapse-content text-sm">Click on "Forgot Password" on the login page and follow the instructions sent to your email.</div>
+              </div>
+              <div class="collapse collapse-plus bg-base-100 border border-base-300 mt-4">
+                <input type="radio" name="my-accordion-3" />
+                <div class="collapse-title font-semibold">How do I update my profile information?</div>
+                <div class="collapse-content text-sm">Go to "My Account" settings and select "Edit Profile" to make changes.</div>
+              </div>
+              <div class="collapse collapse-plus bg-base-100 border border-base-300 mt-4">
+                <input type="radio" name="my-accordion-3" />
+                <div class="collapse-title font-semibold">How do I update my profile information?</div>
+                <div class="collapse-content text-sm">Go to "My Account" settings and select "Edit Profile" to make changes.</div>
+              </div>
+              <div class="collapse collapse-plus bg-base-100 border border-base-300 mt-4">
+                <input type="radio" name="my-accordion-3" />
+                <div class="collapse-title font-semibold">How do I update my profile information?</div>
+                <div class="collapse-content text-sm">Go to "My Account" settings and select "Edit Profile" to make changes.</div>
+              </div>
+    </section>
+                                        <!-- Question ask section close -->
+                                            <!-- footer -->
+     <hr class="border-dashed text-orange-300 mt-[150px] ">
+    <footer class="flex justify-between p-12 px-">
+        <div><div class="flex py-8">
+            <h1 class="font-semibold text-[20px]">English</h1>
+        <img src="assets/logo.png" alt="">
+        <h1 class="font-semibold text-[20px]">জানালা</h1>
+        </div>
+        <p>ইংরেজি শিখুন সহজে</p>
+        <p>Providing ED-Tech Applications since 2025</p>
+        </div>
+        <div class="pt-18">
+            <h1>follow us</h1>
+            <div class="flex">
+                <img src="assets/instagram-thumb.png" alt="">
+                <img src="assets/youtube-thumb.png" alt="">
+                <img src="assets/fb-thumb.png" alt="">
+            </div>
+        </div>
+    </footer>
+    <script src="main.js"></script>
+</body>
+</html>
