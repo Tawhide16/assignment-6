@@ -34,13 +34,25 @@
                 <h1 class="font-semibold text-[20px]">জানালা</h1>
                 </div>
                 <div class="">
-                   <a href="#faq-section"> <button id="scroll-btn" class="btn btn-accent btn-outline text-[#422AD5] border-[#422AD5] hover:bg-[#422AD5] hover:text-[white]"><i class="fa-solid fa-circle-question" style="color: #422ad5;"></i> <a href="#scrool" class="nab-linksmootscrool" ></a>FAQ</button></a>
+                    <a href="#faq-section">
+                        <button id="scroll-btn" class="btn btn-accent btn-outline text-[#422AD5] border-[#422AD5] hover:bg-[#422AD5] hover:text-white group">
+                          <i class="fa-solid fa-circle-question text-[#422AD5] transition-colors duration-300 group-hover:text-white"></i> 
+                          FAQ
+                        </button>
+                      </a>
     
-                    <a href="#learn-section-2"><button id="scroll-learn" class="btn btn-accent btn-outline text-[#422AD5] border-[#422AD5] hover:bg-[#422AD5] hover:text-[white]"><i class="fa-solid fa-book-open" style="color: #422ad5;"></i>Learn</button>
-                    </a>
-                    <button class="btn btn-accent btn-outline text-[#422AD5] border-[#422AD5] hover:bg-[#422AD5] hover:text-[white]" onclick="logout()">
-                        <i class="fa-solid fa-right-from-bracket" style="color: #422ad5;"></i> Logout
-                    </button>
+                      <a href="#learn-section-2">
+                        <button id="scroll-learn" class="btn btn-accent btn-outline text-[#422AD5] border-[#422AD5] hover:bg-[#422AD5] hover:text-white group">
+                          <i class="fa-solid fa-book-open text-[#422AD5] transition-colors duration-300 group-hover:text-white"></i> 
+                          Learn
+                        </button>
+                      </a>
+                      
+                      <button class="btn btn-accent btn-outline text-[#422AD5] border-[#422AD5] hover:bg-[#422AD5] hover:text-white group" onclick="logout()">
+                        <i class="fa-solid fa-right-from-bracket text-[#422AD5] transition-colors duration-300 group-hover:text-white"></i> 
+                        Logout
+                      </button>
+                      
                 </div>
             </section>
         </nav>
@@ -82,7 +94,7 @@
 
 <!-- Open the modal using ID.showModal() method -->
 
-<dialog id="my_modal_1" class="modal">
+<dialog id="woard_modal" class="modal">
   <div id="ditailButton" class="modal-box">
     <div class="modal-action">
       <form method="dialog">
@@ -92,6 +104,10 @@
     </div>
   </div>
 </dialog>
+
+<div class="flex justify-center relative top-20">
+  <span id="loader" class="loading loading-spinner loading-xl  hidden "></span>
+</div>
 
     <section id="learn-section-2" class="items-center text-center bg-[#f8f8f8] mx-12 rounded-xl mt-7 hidden ">
         <div id="learn-section" class=" p-8 grid grid-cols-3 ">

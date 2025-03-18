@@ -6,6 +6,19 @@ const logout = () => {
   location.reload();
 };
 
+// show loader
+const showLoader = () => {
+  document.getElementById("loader").classList.remove("hidden");
+  document.getElementById("learn-section").classList.add("hidden");
+};
+
+// hide loader
+const hideLoader = () => {
+  document.getElementById("loader").classList.add("hidden");
+  document.getElementById("learn-section").classList.remove("hidden");
+};
+
+
 
 // login function
 login = () =>{
@@ -72,7 +85,13 @@ const buttonContainer = document.getElementById("target-learn");
 for(let buttons of data){
 
 const buttonDiv = document.createElement("div");
-buttonDiv.innerHTML =  `<button class=" inline btn btn-soft text-[#422AD5] hover:bg-[#422AD5] hover:text-[white] border-[#422AD5] mt-4 " onclick = "loadvhocary(${buttons.level_no});clickedBtn(${buttons.id})" id = "btn-${buttons.id}"><i class="fa-solid fa-book-open" style="color: #422ad5; "></i> Lesson-${buttons.level_no}</button>`;
+buttonDiv.innerHTML =  `<button class="inline btn btn-soft text-[#422AD5] hover:bg-[#422AD5] hover:text-white border-[#422AD5] mt-4 group" 
+        onclick="loadvhocary(${buttons.level_no}); clickedBtn(${buttons.id})" 
+        id="btn-${buttons.id}">
+    <i class="fa-solid fa-book-open text-[#422AD5] transition-colors duration-300 group-hover:text-white"></i> 
+    Lesson-${buttons.level_no}
+</button>
+`;
 
 buttonContainer.appendChild(buttonDiv)
 }
@@ -81,6 +100,7 @@ buttonContainer.appendChild(buttonDiv)
 
 
 function loadvhocary(level){
+  showLoader()
 fetch(`https://openapi.programming-hero.com/api/level/${level}`)
 
 .then((res) => res.json())
@@ -90,6 +110,7 @@ fetch(`https://openapi.programming-hero.com/api/level/${level}`)
 const displayOut = (learns) => {
 
 const learnVocabolary = document.getElementById("learn-section");
+ hideLoader()
 learnVocabolary.innerHTML =""
  if(learns.length == 0){
   learnVocabolary.innerHTML = `
@@ -110,22 +131,75 @@ learns.forEach((level) => {
     <p class="">Meaning /Pronounciation</p>
     <h1 class="text-[24px]">"${level.meaning}/ ইগার"</h1>
     </div>
-    <div class="justify-between flex px-5 pb-5 pt-8"><i class="fa-solid fa-circle-info"></i>
+    <div class="justify-between flex px-5 pb-5 pt-8"><i class="fa-solid fa-circle-info text-black cursor-pointer" onclick="loadWordDetails()"></i>
  <i class="fa-solid fa-headphones"></i></div>
 </div>
     `;
     learnVocabolary.appendChild(div)
 });
 }
+//ditail-button
 
 
-function ditails (id) {
-  document.getElementById(my_modal_1).showModal ()
-  const ditailButton = document.getElementById("ditailButton");
-  ditailButton.innerHTML = `
-  `;
+// load word details
+const loadWordDetails =async (id) =>{
+  const response = await fetch(`https://openapi.programming-hero.com/api/word/${id}`);
+  const data = await response.json();
+ditails(data.data);
 }
 
+
+function ditails(id) {
+  console.log("Function called, modal should open", id);
+
+  const modal = document.getElementById("woard_modal");
+  if (!modal) {
+    console.error("Modal not found!");
+    return;
+  }
+
+  modal.showModal(); // Open the modal
+
+  const ditailButton = document.getElementById("ditailButton");
+  if (!ditailButton) {
+    console.error("Modal content container not found!");
+    return;
+  }
+
+  ditailButton.innerHTML = `
+    <section class="rounded-2xl w-[375px]">
+      <div class="p-3">
+        <div class="w-[350px] border border-gray-500 rounded-lg p-3">
+          <h1 class="text-[24px]">Eager ( :ইগার)</h1>
+          <p class="pt-2 font-extrabold">Meaning</p>
+          <p>আগ্রহী</p>
+          <p class="pt-3 font-extrabold">Example</p>
+          <p>The kids were eager to open their gifts.</p>
+          <p class="pt-3">সমার্থক শব্দ গুলো</p>
+          <div class="pt-2">
+            <button class="btn btn-active">Enthusiastic</button>
+            <button class="btn btn-active">Excited</button>
+            <button class="btn btn-active">Keen</button>
+          </div>
+        </div>
+      </div>
+      <div class="p-3">
+        <button id="completeLearning" class="btn btn-primary">Complete Learning</button>
+      </div>
+    </section>
+  `;
+
+  // Wait for the button to be added, then attach event listener
+  setTimeout(() => {
+    const completeButton = document.getElementById("completeLearning");
+    if (completeButton) {
+      completeButton.addEventListener("click", () => {
+        console.log("Learning Completed!");
+        modal.close(); // Close modal
+      });
+    }
+  }, 100); // Small delay to ensure the button exists
+}
 
 
 
