@@ -1,107 +1,145 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>English Academy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
-<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        .hind-siliguri-light {
+  font-family: "Hind Siliguri", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+.active{
+    color: white ;
+    background: #422ad5;
+}
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
-<body>
-    <header>
+<body class="hind-siliguri-light relative">
+    <header class="sticky top-0">
                                         <!-- nav bar -->
-        <nav class="fixed overflow-hidden w-full">
-            <section class="flex justify-between bg-[#C6BDBD] p-3 pl-8 pr-8">
+        <nav id="header" class=" overflow-hidden w-full z-10 hidden">
+            <section class="flex justify-between bg-[#ffff] p-3 pl-8 pr-8">
                 <div class="flex">
                     <h1 class="font-semibold text-[20px]">English</h1>
                 <img src="assets/logo.png" alt="">
                 <h1 class="font-semibold text-[20px]">জানালা</h1>
                 </div>
                 <div class="">
-                    <button id="scroll-btn" class="btn btn-accent btn-outline text-[#422AD5] border-[#422AD5] hover:bg-[#422AD5] hover:text-[white]"><i class="fa-solid fa-circle-question" style="color: #422ad5;"></i> <a href="#scrool" class="nab-linksmootscrool" ></a>FAQ</button>
+                   <a href="#faq-section"> <button id="scroll-btn" class="btn btn-accent btn-outline text-[#422AD5] border-[#422AD5] hover:bg-[#422AD5] hover:text-[white]"><i class="fa-solid fa-circle-question" style="color: #422ad5;"></i> <a href="#scrool" class="nab-linksmootscrool" ></a>FAQ</button></a>
     
-                    <button id="scroll-learn" class="btn btn-accent btn-outline text-[#422AD5] border-[#422AD5] hover:bg-[#422AD5] hover:text-[white]"><i class="fa-solid fa-book-open" style="color: #422ad5;"></i>Learn</button>
-    
-                    <button class="btn btn-accent btn-outline text-[#422AD5] border-[#422AD5] hover:bg-[#422AD5] hover:text-[white]"><i class="fa-solid fa-right-from-bracket" style="color: #422ad5;"></i>Logout</button>
+                    <a href="#learn-section-2"><button id="scroll-learn" class="btn btn-accent btn-outline text-[#422AD5] border-[#422AD5] hover:bg-[#422AD5] hover:text-[white]"><i class="fa-solid fa-book-open" style="color: #422ad5;"></i>Learn</button>
+                    </a>
+                    <button class="btn btn-accent btn-outline text-[#422AD5] border-[#422AD5] hover:bg-[#422AD5] hover:text-[white]" onclick="logout()">
+                        <i class="fa-solid fa-right-from-bracket" style="color: #422ad5;"></i> Logout
+                    </button>
                 </div>
             </section>
         </nav>
                                     <!-- hero banner -->
-        <section class="flex items-center justify-between">
-            <div class="pl-10">
-                <h1 class="text-[24px] font-extrabold"><span class="text-sky-500 text-[24px] font-extrabold">English</span> is Easy!!</h1>
-                <br>
-                <p>আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন হন অথবা <br> আপনার দক্ষতা বাড়াতে চান, আমাদের Interactive Lessons আপনাকে নিয়ে <br> যাবে অন্য একটি Level এ</p>
-                <input type="text" placeholder="Enter Your name" class="mt-6 w-[300px]"></input>
-                <br>
-                <input type="pin" placeholder="pin" class="mt-4 w-[300px]"></input>
-                <br>
-                <button class="btn btn-soft text-[#422AD5] hover:bg-[#422AD5] hover:text-[white] border-[#422AD5] mt-4">get started</button>
-            </div>
-            <div>
-                <img src="assets/hero-student.png" alt="">
-            </div>
-        </section>
+        
     </header>
+    <section id="banner" class="flex items-center justify-between">
+        <div class="pl-10">
+            <h1 class="text-[24px] font-extrabold"><span class="text-sky-500 text-[24px] font-extrabold">English</span> is Easy!!</h1>
+            <br>
+            <p>আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন হন অথবা <br> আপনার দক্ষতা বাড়াতে চান, আমাদের Interactive Lessons আপনাকে নিয়ে <br> যাবে অন্য একটি Level এ</p>
+            <input id="user-id" type="text" placeholder="Enter Your name" class="mt-6 w-[250px] p-1 border-gray-500 rounded"></input>
+            <br>
+            <input id="password" type="pin" placeholder="pin" class="mt-4 w-[250px] p-1  border-gray-500 rounded"></input>
+            <br>
+            <button onclick="login()" id="" class="btn btn-soft text-[#422AD5] hover:bg-[#422AD5] hover:text-[white] border-[#422AD5] mt-4">get started</button>
+        </div>
+        <div>
+            <img src="assets/hero-student.png" alt="">
+        </div>
+    </section>
                                         <!-- 7 button action -->
-       <main id="target-learn" class="text-center mt-[110px]">
+       <main id="button-all" class="text-center mt-[110px] hidden">
         <h1 class="text-[24px] font-extrabold"><span class="text-sky-500">Let's</span> Learn Vocabularies</h1>
+        <section id="target-learn" class="flex justify-center gap-3">
 
-        <button class="btn btn-soft text-[#422AD5] hover:bg-[#422AD5] hover:text-[white] border-[#422AD5] mt-4 "><i class="fa-solid fa-book-open" style="color: #422ad5; "></i> Lesson-1</button>
+        </section>
+        <!-- <button class="btn btn-soft text-[#422AD5] hover:bg-[#422AD5] hover:text-[white] border-[#422AD5] mt-4 "><i class="fa-solid fa-book-open" style="color: #422ad5; "></i> Lesson-1</button>
         <button class="btn btn-soft text-[#422AD5] hover:bg-[#422AD5] hover:text-[white] border-[#422AD5] mt-4"><i class="fa-solid fa-book-open" style="color: #422ad5;"></i> Lesson-2</button>
         <button class="btn btn-soft text-[#422AD5] hover:bg-[#422AD5] hover:text-[white] border-[#422AD5] mt-4"><i class="fa-solid fa-book-open" style="color: #422ad5;"></i> Lesson-3</button>
         <button class="btn btn-soft text-[#422AD5] hover:bg-[#422AD5] hover:text-[white] border-[#422AD5] mt-4"><i class="fa-solid fa-book-open" style="color: #422ad5;"></i> Lesson-4</button>
         <button class="btn btn-soft text-[#422AD5] hover:bg-[#422AD5] hover:text-[white] border-[#422AD5] mt-4"><i class="fa-solid fa-book-open" style="color: #422ad5;"></i> Lesson-5</button>
         <button class="btn btn-soft text-[#422AD5] hover:bg-[#422AD5] hover:text-[white] border-[#422AD5] mt-4"><i class="fa-solid fa-book-open" style="color: #422ad5;"></i> Lesson-6</button>
-        <button class="btn btn-soft text-[#422AD5] hover:bg-[#422AD5] hover:text-[white] border-[#422AD5] mt-4"><i class="fa-solid fa-book-open" style="color: #422ad5;"></i> Lesson-7</button>
+        <button class="btn btn-soft text-[#422AD5] hover:bg-[#422AD5] hover:text-[white] border-[#422AD5] mt-4"><i class="fa-solid fa-book-open" style="color: #422ad5;"></i> Lesson-7</button> -->
        </main>
                                     <!-- 7 button close -->
                                      <!-- 7button output -->
-            
-    <section class="items-center text-center bg-[#f8f8f8] mx-12 rounded-xl mt-7">
-        <div class="p-8">
-        <p>আপনি এখনো কোন Lesson Select করেন ন</p>
+
+
+<!-- Open the modal using ID.showModal() method -->
+
+<dialog id="my_modal_1" class="modal">
+  <div id="ditailButton" class="modal-box">
+    <div class="modal-action">
+      <form method="dialog">
+        <!-- if there is a button in form, it will close the modal -->
+        <button class="btn">Close</button>
+      </form>
+    </div>
+  </div>
+</dialog>
+
+    <section id="learn-section-2" class="items-center text-center bg-[#f8f8f8] mx-12 rounded-xl mt-7 hidden ">
+        <div id="learn-section" class=" p-8 grid grid-cols-3 ">
+        <div class="text-center col-span-3">
+            <p>আপনি এখনো কোন Lesson Select করেন ন</p>
         <h1 class="text-[24px]">একটি Lesson Select করুন।</h1>
+        </div>
         </div>
     </section>
                                     <!-- 7button output close -->
                                     <!-- Question ask section -->
-                
-    <section class="px-12 mt-[200px]" id="target-section">
-       
+
+    <section class="px-12 mt-[200px] hidden" id="faq-section ">
+
         <h1 class="text-[24px] font-extrabold text-center"><span class="text-sky-400">Frequently </span> Asked Questions  </h1>
 
-            <div class="collapse collapse-plus bg-base-100 border border-base-300 mt-3">
-                <input type="radio" name="my-accordion-3" checked="checked" />
-                <div class="collapse-title font-semibold">How do I create an account?</div>
-                <div class="collapse-content text-sm">Click the "Sign Up" button in the top right corner and follow the registration process.</div>
-              </div>
-              <div class="collapse collapse-plus bg-base-100 border border-base-300 mt-4">
-                <input type="radio" name="my-accordion-3" />
-                <div class="collapse-title font-semibold">I forgot my password. What should I do?</div>
-                <div class="collapse-content text-sm">Click on "Forgot Password" on the login page and follow the instructions sent to your email.</div>
-              </div>
-              <div class="collapse collapse-plus bg-base-100 border border-base-300 mt-4">
-                <input type="radio" name="my-accordion-3" />
-                <div class="collapse-title font-semibold">How do I update my profile information?</div>
-                <div class="collapse-content text-sm">Go to "My Account" settings and select "Edit Profile" to make changes.</div>
-              </div>
-              <div class="collapse collapse-plus bg-base-100 border border-base-300 mt-4">
-                <input type="radio" name="my-accordion-3" />
-                <div class="collapse-title font-semibold">How do I update my profile information?</div>
-                <div class="collapse-content text-sm">Go to "My Account" settings and select "Edit Profile" to make changes.</div>
-              </div>
-              <div class="collapse collapse-plus bg-base-100 border border-base-300 mt-4">
-                <input type="radio" name="my-accordion-3" />
-                <div class="collapse-title font-semibold">How do I update my profile information?</div>
-                <div class="collapse-content text-sm">Go to "My Account" settings and select "Edit Profile" to make changes.</div>
-              </div>
+            <div class="relative z-0">
+                <div class="collapse collapse-plus bg-base-100 border border-base-300 mt-3">
+                    <input type="radio" name="my-accordion-3" checked="checked" />
+                    <div class="collapse-title font-semibold">1. The difference between var, let, and const ?</div>
+                    <div class="collapse-content text-sm">var: Function-scoped and can be redeclared.let: Block-scoped and cannot be redeclared.const: Block-scoped and its value cannot be changed once assigned.</div>
+                  </div>
+                  <div class="collapse collapse-plus bg-base-100 border border-base-300 mt-4">
+                    <input type="radio" name="my-accordion-3" />
+                    <div class="collapse-title font-semibold">2. The difference between map(), forEach(), and filter() ?</div>
+                    <div class="collapse-content text-sm">map(): Applies a function on each item of the array and creates a new array.forEach(): Runs a function on each item but doesn't return anything.filter(): Creates a new array with only the items that meet a condition.</div>
+                  </div>
+                  <div class="collapse collapse-plus bg-base-100 border border-base-300 mt-4">
+                    <input type="radio" name="my-accordion-3" />
+                    <div class="collapse-title font-semibold">3. Explain arrow functions and how they are different from regular functions ?</div>
+                    <div class="collapse-content text-sm">Arrow functions are a shorter syntax for writing functions in JavaScript, using the => operator. They don't have their own this, so they inherit it from the surrounding context. In contrast, regular functions have their own this, which can lead to different behavior when used inside objects or callbacks.</div>
+                  </div>
+                  <div class="collapse collapse-plus bg-base-100 border border-base-300 mt-4">
+                    <input type="radio" name="my-accordion-3" />
+                    <div class="collapse-title font-semibold">4. How JavaScript Promises work?</div>
+                    <div class="collapse-content text-sm">JavaScript Promise is an operation that will complete sometime in the future. When the operation is successful, we use .then(), and if there is an error or failure, we handle it with .catch(). It helps in managing asynchronous tasks more easily.</div>
+                  </div>
+                  <div class="collapse collapse-plus bg-base-100 border border-base-300 mt-4">
+                    <input type="radio" name="my-accordion-3" />
+                    <div class="collapse-title font-semibold">5. How closures work in JavaScript?</div>
+                    <div class="collapse-content text-sm">Closures in JavaScript occur when a function retains access to its lexical scope, even after the outer function has finished executing. This means that an inner function can remember and access variables from its outer function, even after the outer function has returned.</div>
+                  </div>
+            </div>
     </section>
                                         <!-- Question ask section close -->
                                             <!-- footer -->
      <hr class="border-dashed text-orange-300 mt-[150px] ">
-    <footer class="flex justify-between p-12 px-">
+    <footer class="flex justify-between p-12 px- ">
         <div><div class="flex py-8">
             <h1 class="font-semibold text-[20px]">English</h1>
         <img src="assets/logo.png" alt="">
@@ -119,6 +157,10 @@
             </div>
         </div>
     </footer>
+    
+            
+        
+    
     <script src="main.js"></script>
 </body>
 </html>
