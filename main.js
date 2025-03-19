@@ -131,7 +131,7 @@ learns.forEach((level) => {
     <p class="">Meaning /Pronounciation</p>
     <h1 class="text-[24px]">"${level.meaning}/ ইগার"</h1>
     </div>
-    <div class="justify-between flex px-5 pb-5 pt-8"><i class="fa-solid fa-circle-info text-black cursor-pointer" onclick="loadWordDetails()"></i>
+    <div class="justify-between flex px-5 pb-5 pt-8"><i class="fa-solid fa-circle-info text-black cursor-pointer" onclick="loadWordDetails(${level.id})"></i>
  <i class="fa-solid fa-headphones"></i></div>
 </div>
     `;
@@ -150,7 +150,7 @@ ditails(data.data);
 
 
 function ditails(id) {
-  console.log("Function called, modal should open", id);
+  console.log(id);
 
   const modal = document.getElementById("woard_modal");
   if (!modal) {
@@ -170,24 +170,33 @@ function ditails(id) {
     <section class="rounded-2xl w-[375px]">
       <div class="p-3">
         <div class="w-[350px] border border-gray-500 rounded-lg p-3">
-          <h1 class="text-[24px]">Eager ( :ইগার)</h1>
+          <h1 class="text-[24px]">${id.word} ( :${id.pronunciation})</h1>
           <p class="pt-2 font-extrabold">Meaning</p>
-          <p>আগ্রহী</p>
+          <p>${id.meaning}</p>
           <p class="pt-3 font-extrabold">Example</p>
-          <p>The kids were eager to open their gifts.</p>
+          <p>${id.sentence}</p>
           <p class="pt-3">সমার্থক শব্দ গুলো</p>
-          <div class="pt-2">
-            <button class="btn btn-active">Enthusiastic</button>
-            <button class="btn btn-active">Excited</button>
-            <button class="btn btn-active">Keen</button>
+          <div id ="btn-container" class="pt-2 flex flex-wrap gap-2">
+            
           </div>
         </div>
       </div>
-      <div class="p-3">
+      <div class="p-3 ">
         <button id="completeLearning" class="btn btn-primary">Complete Learning</button>
       </div>
     </section>
   `;
+
+  const container = document.getElementById("btn-container");
+  for (let synonym of id.synonyms ) {
+  const button = document.createElement("div");
+  button.innerHTML = `
+     <button class="btn btn-active">${synonym}</button>
+  `;
+  container.appendChild(button)
+  
+  }
+
 
   // Wait for the button to be added, then attach event listener
   setTimeout(() => {

@@ -24,10 +24,10 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body class="hind-siliguri-light relative">
-    <header class="sticky top-0">
+    <header class="sticky top-0 z-10">
                                         <!-- nav bar -->
-        <nav id="header" class=" overflow-hidden w-full z-10 hidden">
-            <section class="flex justify-between bg-[#ffff] p-3 pl-8 pr-8">
+        <nav id="header" class=" overflow-hidden w-full hidden">
+            <section class="flex justify-between bg-[#fff] p-3 pl-8 pr-8">
                 <div class="flex">
                     <h1 class="font-semibold text-[20px]">English</h1>
                 <img src="assets/logo.png" alt="">
@@ -41,7 +41,7 @@
                         </button>
                       </a>
     
-                      <a href="#learn-section-2">
+                      <a href="#button-all">
                         <button id="scroll-learn" class="btn btn-accent btn-outline text-[#422AD5] border-[#422AD5] hover:bg-[#422AD5] hover:text-white group">
                           <i class="fa-solid fa-book-open text-[#422AD5] transition-colors duration-300 group-hover:text-white"></i> 
                           Learn
@@ -55,6 +55,7 @@
                       
                 </div>
             </section>
+            <hr class="bg-slate-100">
         </nav>
                                     <!-- hero banner -->
         
@@ -75,7 +76,7 @@
         </div>
     </section>
                                         <!-- 7 button action -->
-       <main id="button-all" class="text-center mt-[110px] hidden">
+       <main id="button-all" class="text-center mt-[110px] hidden scroll-mt-52">
         <h1 class="text-[24px] font-extrabold"><span class="text-sky-500">Let's</span> Learn Vocabularies</h1>
         <section id="target-learn" class="flex justify-center gap-3">
 
@@ -105,11 +106,11 @@
   </div>
 </dialog>
 
-<div class="flex justify-center relative top-20">
+<div class="flex justify-center relative top-20 ">
   <span id="loader" class="loading loading-spinner loading-xl  hidden "></span>
 </div>
 
-    <section id="learn-section-2" class="items-center text-center bg-[#f8f8f8] mx-12 rounded-xl mt-7 hidden ">
+    <section id="learn-section-2" class=" items-center text-center bg-[#f8f8f8] mx-12 rounded-xl mt-7 hidden ">
         <div id="learn-section" class=" p-8 grid grid-cols-3 ">
         <div class="text-center col-span-3">
             <p>আপনি এখনো কোন Lesson Select করেন ন</p>
@@ -120,7 +121,7 @@
                                     <!-- 7button output close -->
                                     <!-- Question ask section -->
 
-    <section class="px-12 mt-[200px] hidden" id="faq-section ">
+    <section class="px-12 mt-[200px] hidden relative z-0 scroll-mt-20" id="faq-section">
 
         <h1 class="text-[24px] font-extrabold text-center"><span class="text-sky-400">Frequently </span> Asked Questions  </h1>
 
